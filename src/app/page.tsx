@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -16,9 +18,11 @@ export default function Home() {
               <a href="#pricing" className="text-slate-400 hover:text-white transition">Pricing</a>
               <a href="#" className="text-slate-400 hover:text-white transition">Docs</a>
             </nav>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-lg hover:opacity-90 transition">
-              Get Started Free
-            </button>
+            <Link href="/login">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-lg hover:opacity-90 transition">
+                Get Started Free
+              </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -33,9 +37,11 @@ export default function Home() {
             Monitor unlimited keywords across multiple sites. Get daily ranking updates, historical charts, and CSV exports. Perfect for SEO pros and agencies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition">
-              Start Free Trial
-            </button>
+            <Link href="/login">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition">
+                Start Free Trial
+              </button>
+            </Link>
             <button className="bg-slate-800/50 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-slate-800 transition border border-slate-700">
               View Demo
             </button>
@@ -138,9 +144,11 @@ export default function Home() {
                   <span>30 days history</span>
                 </li>
               </ul>
-              <button className="w-full bg-slate-700 text-white py-3 rounded-lg font-semibold hover:bg-slate-600 transition">
-                Start Free Trial
-              </button>
+              <Link href="/login" className="w-full">
+                <button className="w-full bg-slate-700 text-white py-3 rounded-lg font-semibold hover:bg-slate-600 transition">
+                  Start Free Trial
+                </button>
+              </Link>
             </div>
 
             {/* Pro */}
@@ -183,9 +191,11 @@ export default function Home() {
                   <span>Priority support</span>
                 </li>
               </ul>
-              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                Start Free Trial
-              </button>
+              <Link href="/login" className="w-full">
+                <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                  Start Free Trial
+                </button>
+              </Link>
             </div>
 
             {/* Agency */}
@@ -229,9 +239,11 @@ export default function Home() {
                   <span>API access</span>
                 </li>
               </ul>
-              <button className="w-full bg-slate-700 text-white py-3 rounded-lg font-semibold hover:bg-slate-600 transition">
-                Start Free Trial
-              </button>
+              <Link href="/login" className="w-full">
+                <button className="w-full bg-slate-700 text-white py-3 rounded-lg font-semibold hover:bg-slate-600 transition">
+                  Start Free Trial
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -246,9 +258,11 @@ export default function Home() {
           <p className="text-xl text-slate-400 mb-8">
             Join 500+ SEO professionals and agencies who track their rankings with us
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition">
-            Start Free 14-Day Trial
-          </button>
+          <Link href="/login">
+            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition">
+              Start Free 14-Day Trial
+            </button>
+          </Link>
           <p className="text-sm text-slate-500 mt-4">No credit card required • Cancel anytime</p>
         </div>
       </section>
