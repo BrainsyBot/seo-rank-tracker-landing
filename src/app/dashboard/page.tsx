@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
+import { SubscriptionGate } from '@/components/SubscriptionGate'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 type Site = {
   id: string
@@ -13,6 +15,8 @@ type Site = {
 
 export default function Dashboard() {
   const router = useRouter()
+  const { address } = useAccount()
+  const { disconnect } = useDisconnect()
   const [user, setUser] = useState<any>(null)
   const [sites, setSites] = useState<Site[]>([])
   const [loading, setLoading] = useState(true)
@@ -87,16 +91,24 @@ export default function Dashboard() {
   }
 
   return (
+    <SubscriptionGate>
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">SEO Rank Tracker</h1>
-          <button
-            onClick={signOut}
-            className="text-sm text-gray-600 hover:text-gray-900"
-          >
-            Sign Out
-          </button>
+          <div className="flex items-center gap-4">
+            {address && (
+              <span className="text-sm text-gray-500">
+                {address.slice(0, 6)}...{address.slice(-4)}
+              </span>
+            )}
+            <button
+              onClick={signOut}
+              className="text-sm text-gray-600 hover:text-gray-900"
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
       </header>
 
@@ -163,5 +175,6 @@ export default function Dashboard() {
         </div>
       </main>
     </div>
+    </SubscriptionGate>
   )
 }
